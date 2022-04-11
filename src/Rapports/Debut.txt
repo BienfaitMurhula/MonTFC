@@ -1,0 +1,8 @@
+Bienvenue dans l'assistant de l'installation du P_Scanner un logiciel de gestion des présences des agents dans des entreprises.
+Ce logiel est equipé d'une technologie de scanner de QrCode pour enregistrer les présences des agents.
+Vue la situation financière, nous avons utilisés le WebCam de l'ordinateur pour Scanner la présence de chaque agent de l'entreprise.
+Lee QrCode est géneré et imprimé sur la Carte de service de chaque agent.
+
+			Auteur : Bienfait Murhula
+			E-mai  : bienfaitmurhula.122@gmail.com
+			Tel    : +243978167647, +243846920838

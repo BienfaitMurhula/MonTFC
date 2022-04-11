@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Carte" language="groovy" pageWidth="170" pageHeight="257" columnWidth="170" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="b3fd7c3e-e7e4-4fd1-8d7f-22fa58133559">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT Id, concat(NOM, ' ',POSTNOM,' ',PRENOM) Noms,SEXE,date_naiss AS [DATE_DE_NAISS], DATEDIFF(YEAR,date_naiss, GETDATE()) AS AGE, etat_civil
+	[ETAT CIVIL], NATIONALITE, ADRESSE, TELEPHONE, niv_etude [NIVEAU D'ETUDE],PHOTO,QrCode,Matricule FROM agent]]>
+	</queryString>
+	<field name="Id" class="java.lang.Integer"/>
+	<field name="Noms" class="java.lang.String"/>
+	<field name="SEXE" class="java.lang.String"/>
+	<field name="DATE_DE_NAISS" class="java.lang.String"/>
+	<field name="AGE" class="java.lang.Integer"/>
+	<field name="ETAT CIVIL" class="java.lang.String"/>
+	<field name="NATIONALITE" class="java.lang.String"/>
+	<field name="ADRESSE" class="java.lang.String"/>
+	<field name="TELEPHONE" class="java.lang.String"/>
+	<field name="NIVEAU D&apos;ETUDE" class="java.lang.String"/>
+	<field name="PHOTO" class="java.io.InputStream"/>
+	<field name="QrCode" class="java.io.InputStream"/>
+	<field name="Matricule" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="115" splitType="Stretch">
+			<frame>
+				<reportElement x="0" y="0" width="170" height="115" uuid="193cffd0-3c27-457d-b508-9f594a290bba"/>
+				<box>
+					<pen lineWidth="0.75" lineStyle="Solid"/>
+					<topPen lineWidth="0.75" lineStyle="Solid"/>
+					<leftPen lineWidth="0.75" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.75" lineStyle="Solid"/>
+					<rightPen lineWidth="0.75" lineStyle="Solid"/>
+				</box>
+				<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+					<reportElement x="0" y="0" width="29" height="20" uuid="6ee67609-5898-4206-9990-9f0e3122c631"/>
+					<imageExpression><![CDATA[".\\kapkivu.jpg"]]></imageExpression>
+				</image>
+				<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+					<reportElement x="141" y="0" width="29" height="20" uuid="47ce43a1-54d7-45d9-bc2d-d4c586f2b3b1"/>
+					<imageExpression><![CDATA[".\\Image1.jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="29" y="0" width="112" height="20" uuid="d770d9f8-a8ca-4f3e-9dd6-496d13925c53"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="10" isBold="true" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[CAP KIVU HOTEL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="19" width="170" height="10" uuid="d1bbf772-0a11-464e-913e-fe3b87f2b858"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Trebuchet MS" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[République democratique du Congo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="28" width="170" height="10" uuid="46e95a21-fea1-4a71-8be7-80d79450d6ab"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Trebuchet MS" size="8" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Goma/avenue de la frontiere]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="37" width="170" height="10" uuid="10bbd3ef-5db1-4223-8510-323c501a881f"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="8" isBold="true"/>
+					</textElement>
+					<text><![CDATA[CARTE DE SERVICE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="43" y="50" width="40" height="10" uuid="da04cb78-712b-4659-9f3a-13164b0a2099">
+						<propertyExpression name="sexe"><![CDATA[$F{SEXE}]]></propertyExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[Matricule]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="43" y="66" width="40" height="10" uuid="064be9f3-f2c0-4407-8e67-527ea18e3f50">
+						<propertyExpression name="sexe"><![CDATA[$F{SEXE}]]></propertyExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[Sexe]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="1" y="88" width="63" height="10" uuid="299a4b62-c5aa-42ca-af08-75c74b15c6d3">
+						<propertyExpression name="sexe"><![CDATA[$F{SEXE}]]></propertyExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[Mom & Postnom]]></text>
+				</staticText>
+				<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+					<reportElement x="1" y="48" width="42" height="39" uuid="1aeaad64-9b17-4bbf-b514-4bde0689ae11"/>
+					<imageExpression><![CDATA[$F{PHOTO}]]></imageExpression>
+				</image>
+				<textField>
+					<reportElement x="1" y="98" width="82" height="10" uuid="188d6db4-0da2-4c98-87a4-ac6795f03624"/>
+					<textElement verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Noms}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="43" y="59" width="40" height="10" uuid="2ce955f9-b297-4cc4-a1c7-fb6561720dfc"/>
+					<textElement verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Matricule}]]></textFieldExpression>
+				</textField>
+				<image scaleImage="FillFrame" hAlign="Center" vAlign="Middle">
+					<reportElement x="137" y="52" width="33" height="28" uuid="f0f38655-92e5-4e36-bdbc-39a87f4420c9"/>
+					<imageExpression><![CDATA[$F{QrCode}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="97" y="51" width="40" height="10" uuid="e74cff8b-f647-4f5f-8635-fbab23c52092">
+						<propertyExpression name="sexe"><![CDATA[$F{SEXE}]]></propertyExpression>
+					</reportElement>
+					<textElement verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<text><![CDATA[Telephone]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="43" y="75" width="40" height="10" uuid="d72fd6be-0bbe-4788-9386-cc34af1d7325"/>
+					<textElement verticalAlignment="Middle" markup="none">
+						<font size="6"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{SEXE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="97" y="61" width="40" height="10" uuid="20a74c5d-5b6a-4f5b-8e2f-3f40e98fff26"/>
+					<textElement verticalAlignment="Middle">
+						<font size="6"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{TELEPHONE}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>

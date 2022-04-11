@@ -1,0 +1,13 @@
+Merci d'avoir installer P_Scanner sur votre Pc, 
+
+Notice
+======
+	Si vous n'êtres pas administrateur de ce système vous devez demander l'autorisation à l'admin pour commencer l'exploitation de ce joli logiciel,
+en plus ce logiel peut être utilisé dans un réseau local pour avoir accès aux même information dans l'entreprise (obligatoire), dans le cas contraire seul l'administrateur aura accès
+à son exploitation.
+ 			Auteur : Bienfait Murhula
+			E-mai  : bienfaitmurhula.122@gmail.com
+			Tel    : +243978167647, +243846920838
+
+
+				FIN

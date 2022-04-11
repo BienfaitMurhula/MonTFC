@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ListePresence" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="cf6dc328-c37a-4d3c-9133-d003c7e8fbf3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select PRESENCE.ID,DATE_PRESENCE,HEURE_ARRIVEE,HEURE_SORTIE,ACTION,abs(dbo.f_heure()) HEURE,abs(dbo.f_min()) _MIN,(NOM+' '+ POSTNOM) NOMS from presence JOIN AGENT ON AGENT.ID= PRESENCE.CODEAGENT]]>
+	</queryString>
+	<field name="ID" class="java.lang.Integer"/>
+	<field name="DATE_PRESENCE" class="java.lang.String"/>
+	<field name="HEURE_ARRIVEE" class="java.lang.String"/>
+	<field name="HEURE_SORTIE" class="java.lang.String"/>
+	<field name="ACTION" class="java.lang.String"/>
+	<field name="HEURE" class="java.lang.Integer"/>
+	<field name="_MIN" class="java.lang.Integer"/>
+	<field name="NOMS" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="124" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="0" width="555" height="97" uuid="74692ee4-a74b-4a0a-941b-dfdac9da1c61"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<image>
+					<reportElement x="0" y="4" width="106" height="93" uuid="6cf91837-d10f-42d9-88ce-336d13844a95"/>
+					<imageExpression><![CDATA[".//kapkivu.jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="106" y="4" width="343" height="33" uuid="4c4de63c-c86b-44ef-a3be-2d04da051749"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="28" isBold="true" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[CAP KIVU HOTEL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="106" y="36" width="343" height="20" uuid="35c37b8a-b80e-4f69-a6f2-fc7b6a8be459"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Trebuchet MS" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[République democratique du Congo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="106" y="55" width="343" height="20" uuid="a5182e23-2119-43f4-8866-95f614737037"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Trebuchet MS" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Goma/avenue de la frontiere]]></text>
+				</staticText>
+				<image>
+					<reportElement x="449" y="0" width="106" height="93" uuid="01ff6180-7a8e-4fd6-8986-968bd03d2ee8"/>
+					<imageExpression><![CDATA[".//kapkivu.jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="106" y="74" width="343" height="20" uuid="f3bfebb9-fe47-4a72-9a70-954e1cc23253"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Trebuchet MS" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Contact: 0978167647]]></text>
+				</staticText>
+			</frame>
+			<staticText>
+				<reportElement x="106" y="97" width="343" height="24" uuid="c306c4f6-d84f-4755-9653-96c259ef2c95"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[LISTE DES PRESENCES]]></text>
+			</staticText>
+			<line>
+				<reportElement x="128" y="120" width="302" height="1" uuid="22c32b39-13bd-4e2f-89fb-f497f3de6201"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="2" y="0" width="25" height="20" uuid="f7dbbd32-4309-4603-8dd7-30ec0be1adf3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="29" y="0" width="124" height="20" uuid="d2aeed77-4f9e-40da-85c2-26f6bf48c535"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NOM AGENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="0" width="96" height="20" uuid="5925d606-2c15-45ef-b245-907c01b37978"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATE DE PRESENCE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="249" y="0" width="75" height="20" uuid="f81c1da3-19bd-4c9f-8acf-577a9d177b35"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ARRIVVEE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="324" y="0" width="57" height="20" uuid="f99603d9-d026-4278-bad6-9a2a0a580a1a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SORTIE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="0" width="44" height="20" uuid="7e072e7c-8b9d-4802-8fa3-6fad42f3a920"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ACTION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="424" y="0" width="60" height="20" uuid="858e26b9-87cb-4ce0-9d3c-911243c90ca9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEMPS/H]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="484" y="0" width="60" height="20" uuid="c147fbd0-e6d6-4ef6-a639-77e23f9a9b48"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TEMPS/MIN]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="28" y="0" width="125" height="20" uuid="b6daba94-0220-4225-b19f-e74697396aed"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="424" y="0" width="60" height="20" uuid="9a05e328-b599-40e4-9af9-63a5992ce0be"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="484" y="0" width="60" height="20" uuid="3873c6db-3c90-4884-97a1-74859932e070"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="153" y="0" width="96" height="20" uuid="d9a983f9-927f-4262-8767-5756489ccd25"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="249" y="0" width="75" height="20" uuid="5e2b83a6-950e-439c-8fee-07e14fb99910"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="380" y="0" width="44" height="20" uuid="2c95da3a-db52-44ef-af37-6863f9ccc0d2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="324" y="0" width="56" height="20" uuid="40a6b460-8c22-458d-9f75-5ab8b3f43f9d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="2" y="0" width="26" height="20" uuid="de5b819f-d207-40c7-8c22-e37c7a439d75"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="29" y="0" width="125" height="20" uuid="476ed3b4-bda0-4172-91fb-317833ae82bb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="153" y="0" width="96" height="20" uuid="22ffc48a-1262-4cf2-a4c6-0b8559736e42"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DATE_PRESENCE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="0" width="75" height="20" uuid="8d423dcc-ba32-4f5c-84d9-dd8fc799c309"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HEURE_ARRIVEE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="324" y="0" width="57" height="20" uuid="0712a2d4-c312-4756-bb71-42c1de832ac6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HEURE_SORTIE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="44" height="20" uuid="7547429e-b67f-4083-9950-6f302c368802"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ACTION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="424" y="0" width="60" height="20" uuid="36d9fc75-9a92-4bf0-aeda-f4adcc7773a5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HEURE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="0" width="60" height="20" uuid="7a22a973-f967-4d56-896f-2dd8ac447865"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{_MIN}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="0" width="25" height="20" uuid="acb89408-da9f-471a-af65-34ab5dd7c730"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Agency FB" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="324" y="0" width="56" height="20" uuid="6c6d0b18-b333-43ec-9622-3cf317f9bd96"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="380" y="0" width="44" height="20" uuid="ba8e07d8-5710-4e14-82fe-326072848e7e"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="249" y="0" width="75" height="20" uuid="ff913446-6147-4b03-8517-350b6e214f57"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="484" y="0" width="60" height="20" uuid="9909f31c-f294-416e-8f14-9958cf7786f5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="153" y="0" width="96" height="20" uuid="31261f16-89b7-4cd9-a725-aa66cb294263"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="2" y="0" width="26" height="20" uuid="75337180-a5e5-48df-82a3-5e76ac6e0ba2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="28" y="0" width="125" height="20" uuid="3621bc22-b011-421b-b542-6461f6c7a1fd"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="424" y="0" width="60" height="20" uuid="0529bb29-7c54-4c00-9a6d-b79f0fd2c41d"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="1" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="1" splitType="Stretch"/>
+	</summary>
+</jasperReport>

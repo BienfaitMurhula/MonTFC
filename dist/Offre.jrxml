@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Offre" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="57e47edc-5fc7-42be-935b-4a2669eea340">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="51475c5c-a02b-4b38-8daf-271f126d2587"/>
+	<queryString>
+		<![CDATA[select a.id,ref_offre,qualite,experience,niveau,date_depot,designation_fonct, format(GETDATE(),'yyyy-MM-dd HH:mm:ss') as date_publication, concat(DATEDIFF(DAY, GETDATE(),date_depot),' Jours') as DUREE from APPARTENIR a
+inner join OFFRE o on o.id= a.codeoffre inner join fonction f on f.Id_fonction=a.codefonction]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="ref_offre" class="java.lang.String"/>
+	<field name="qualite" class="java.lang.String"/>
+	<field name="experience" class="java.lang.String"/>
+	<field name="niveau" class="java.lang.String"/>
+	<field name="date_depot" class="java.lang.String"/>
+	<field name="designation_fonct" class="java.lang.String"/>
+	<field name="date_publication" class="java.lang.String"/>
+	<field name="DUREE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="122" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="1" width="555" height="97" uuid="bd534677-74f4-47de-8207-27ad09605da4"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<image>
+					<reportElement x="0" y="4" width="106" height="93" uuid="6fb407f9-5527-4583-b481-e95524299d45"/>
+					<imageExpression><![CDATA[".//kapkivu.jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="106" y="4" width="343" height="33" uuid="6c24f58b-ebe3-42e9-9e72-2e8a03f352f4"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="28" isBold="true" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[CAP KIVU HOTEL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="106" y="37" width="343" height="20" uuid="33b28cef-6008-4ae4-a9c2-7b2761a9d6a2"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Trebuchet MS" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[République democratique du Congo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="106" y="57" width="343" height="20" uuid="454fa7e3-6e40-46c8-8e25-8ca497d117d8"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Trebuchet MS" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Goma/avenue de la frontiere]]></text>
+				</staticText>
+			</frame>
+			<image>
+				<reportElement x="449" y="3" width="106" height="93" uuid="2dde68f9-a9e3-4647-b8c1-7010f2a9acfa"/>
+				<imageExpression><![CDATA[".//kapkivu.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="106" y="78" width="343" height="20" uuid="142d9d89-e062-4063-b04e-81487df6d540"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Contact: 0978167647]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="98" width="343" height="24" uuid="d2d9329f-3477-4491-8dcc-de54dfa95923"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[AVIS DE RECRUTEMENT]]></text>
+			</staticText>
+			<line>
+				<reportElement x="128" y="121" width="302" height="1" uuid="1c35d853-c10f-47ea-a8ef-74aa6b14df91"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="247" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="0" width="240" height="20" uuid="c9910ee2-625f-4167-a3da-e38da36c929f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[OFFRE D'EMPLOI INTERNE\EXTERNE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="20" width="240" height="20" uuid="13a8230b-82a6-42bd-905c-36cc1911a168"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[POSTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="58" width="240" height="20" uuid="cd4662d2-60c9-4665-8bd3-f3b45f6f0a92"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Titre du poste]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="78" width="240" height="20" uuid="328f59dc-5322-43cc-a0ea-941dd9e87ed9"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Superviseur/qualité]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="98" width="240" height="20" uuid="fa2479e6-ba4b-4860-b10e-1164025f20bb"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Experience]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="7" y="118" width="240" height="20" uuid="808ca5ed-d885-47c5-85ad-ffb5db248639"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Niveau d'étude]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="138" width="240" height="20" uuid="e3df2aa4-d55d-42a2-9a6a-b843915abf95"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date de publication]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="158" width="240" height="20" uuid="8581cfd2-9f48-4156-b3b9-278ffc98ea5d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Date de clôture]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="178" width="240" height="20" uuid="12b06ef7-0ab5-4cc8-af71-10057ed8463f"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Durrée]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="198" width="546" height="29" uuid="be331c6a-7a11-40b0-a5dc-2f9329a02c85"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sous reserve de la confirmation de la disponibilité des agents veuillez nous contacter à cette adresse indiquez:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="9" y="227" width="240" height="20" forecolor="#0033CC" uuid="85325aaf-d437-46fa-8570-ad0dfad5a243"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true" isUnderline="true" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[cap-kivuhotel@gmail.com]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="247" y="58" width="275" height="20" uuid="273ef961-d0da-4f11-ac91-4494a54fc430"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="78" width="275" height="20" uuid="94b545bf-14a1-486a-ac83-54b7b7a9111d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="98" width="275" height="20" uuid="73a03390-a27d-447c-b127-82f61a9a55c6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="118" width="275" height="20" uuid="82d27a32-5d29-408f-b82d-a94855d82847"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="138" width="275" height="20" uuid="481603f9-21a0-442f-8ce2-8ffe6eb679ce"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="158" width="275" height="20" uuid="2e12869f-b6c3-4f39-afb1-76bb1be9b216"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="178" width="275" height="20" uuid="ae2a4b0b-08c3-4ddd-8ab7-3b45ed8e54a2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="0" width="275" height="20" uuid="d68723ee-345a-45ce-8dbd-0b2bad7939b1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="247" y="20" width="275" height="20" uuid="0c136b3d-8dc6-4b29-b6c8-4376deb0d978"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="7" y="40" width="515" height="18" uuid="c8484cee-c0f9-47ea-a91e-b04907d21ca5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="7" y="0" width="240" height="20" uuid="0b2dfe36-4ae4-43b9-8a49-46c8709a29a6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="7" y="20" width="240" height="20" uuid="3f5751d3-c105-4f70-b165-422085e5682f"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="7" y="58" width="240" height="20" uuid="6a87ab96-9683-46cd-a96e-c1d53a1066d4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="7" y="78" width="240" height="20" uuid="930b276a-de2a-4e4c-b18b-c718d95d6259"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="7" y="98" width="240" height="20" uuid="b200ad7a-dd0a-4850-b640-f0c93f749ca6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="7" y="118" width="240" height="20" uuid="6bad4ff1-c599-4493-a0ef-b0f616b5fc5a"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="7" y="138" width="240" height="20" uuid="9a638de2-e07b-4437-88a0-6498f28a5fe9"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="7" y="158" width="240" height="20" uuid="66e3d6ac-d89c-4561-8b14-1adf32cc6ca9"/>
+			</rectangle>
+			<rectangle>
+				<reportElement mode="Transparent" x="7" y="178" width="240" height="20" uuid="1563e1d3-a80e-47f0-9c6a-1a1bc3c9399b"/>
+			</rectangle>
+			<textField>
+				<reportElement x="249" y="178" width="273" height="20" uuid="2ff1d618-4921-4c7d-b162-085fc55d5b0e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DUREE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="158" width="273" height="20" uuid="3ada2087-632e-408a-904c-643f37e5ed7e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date_depot}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="138" width="273" height="20" uuid="770ecb3c-6b4f-47eb-9856-2e9ee8bad969"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{date_publication}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="118" width="273" height="20" uuid="7ffe56f8-da10-4229-85e5-26ee5bf0855b"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{niveau}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="98" width="273" height="20" uuid="e93f24f6-43fd-4c50-afa6-b28a5cfbc5de"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{experience}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="78" width="273" height="20" uuid="913b2a9d-3b17-429f-a2f3-100e325631c4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qualite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="58" width="273" height="20" uuid="1a57387e-a1ad-43cf-8627-ad8a1d76ab02"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{designation_fonct}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="20" width="273" height="20" uuid="7b82e978-0d19-428b-b181-f2691d9d4ed1"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{designation_fonct}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="249" y="1" width="273" height="20" uuid="1e1a7b68-e9b9-487c-a9b4-2636e3399a6e"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Agency FB" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ref_offre}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="388" splitType="Stretch">
+			<staticText>
+				<reportElement x="9" y="0" width="240" height="20" uuid="9fd8a4bd-3aaa-493c-a606-cca8f765ea58"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[1. Présentation de l'institution]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="555" height="358" uuid="a03db868-be37-43fc-832c-8945416e93d8"/>
+				<textElement>
+					<font fontName="Century Gothic" size="12"/>
+				</textElement>
+				<text><![CDATA[CAP KIVU hôtel est une propriété privée de MUSANGANYA LUBONGERA Antoine, qui œuvre dans le secteur hôtelier faisant partie des établissements ML. Vers les années 1994, cet hôtel était une maison d’habitation. C’est le fruit d’une initiative privée de prestation des services. Cette année nous rappelle l’entrée massive des réfugiés Rwandais à Goma avec contexte économico-politique et social du pays caractérisé par la crise monétaire. En 2003, les travaux de transformation du bâtiment prennent un élan jusqu’à l’achèvement partiel en 2005. C’est ainsi qu’en Février 2009 CAP KIVU hôtel commence son exploitation avec succès.
+Ensuite il a été construit d’autres bâtiments supplémentaires tels que le snack bar, un bloc à côté de la réception comportant 23 chambres et un autre au bord du lac avec 13 chambres V.I.P ayant une vue sur le lac et la chaîne de Mitumba, le service de réception bien équipé, une salle de conférence modernisée d’une capacité d’accueil de 80 personnes.
+ Aujourd’hui l’Hôtel a la capacité de 70 chambres luxueuses opérationnelles et 16 jusque-là non opérationnelles. Cet agrandissement exigeait désormais le renforcement en mains d’œuvre qui atteint aujourd’hui presque une centaine des personnes. Il est vrai que CAP KIVU hôtel bénéficie déjà d’une grande renommée aux niveaux local, national et international, ce qui lui vaut d’avoir une grande clientèle et de se retrouvé parmi les rares établissements hôteliers de la ville de Goma les plus fiables et viables, accueillants toujours des invités de marque.
+Voilà pourquoi le propriétaire de l’hôtel éprouve un besoin pressant d’élargir cet établissement mais aussi de diversifier des activités attractives pour satisfaire sa clientèle qui ne cessent de s’agrandir du jour au lendemain.
+C’est ainsi que pour répondre à ces besoins, il s’est fixé pour objectif de construire une grande salle qui a une capacité d’accueil de 1200 personnes avec au-dessus 16 chambres à coucher. Salle opérationnelle depuis le mois d’avril 2014.
+]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="2" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="2" splitType="Stretch"/>
+	</summary>
+</jasperReport>

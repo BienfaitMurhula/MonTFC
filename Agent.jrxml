@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Agent" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="605e57bc-d9a7-42e4-add1-49c2080d324d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<subDataset name="New Dataset 1" uuid="84ba58c9-2487-4ba5-8e6b-1181f58772bf">
+		<queryString language="SQL">
+			<![CDATA[SELECT Id,NOM,POSTNOM,PRENOM,SEXE,date_naiss AS [DATE_DE_NAISS], DATEDIFF(YEAR,date_naiss, GETDATE()) AS AGE, etat_civil
+	[ETAT CIVIL], NATIONALITE, ADRESSE, TELEPHONE, niv_etude [NIVEAU D'ETUDE],PHOTO FROM agent]]>
+		</queryString>
+		<field name="NOM" class="java.lang.String"/>
+		<field name="POSTNOM" class="java.lang.String"/>
+		<field name="PRENOM" class="java.lang.String"/>
+		<field name="SEXE" class="java.lang.String"/>
+		<field name="DATE_DE_NAISS" class="java.lang.String"/>
+		<field name="AGE" class="java.lang.Integer"/>
+		<field name="ETAT CIVIL" class="java.lang.String"/>
+		<field name="NATIONALITE" class="java.lang.String"/>
+		<field name="ADRESSE" class="java.lang.String"/>
+		<field name="TELEPHONE" class="java.lang.String"/>
+		<field name="NIVEAU D&apos;ETUDE" class="java.lang.String"/>
+		<field name="PHOTO" class="java.lang.Object"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT id,CONCAT(NOM, ' ',POSTNOM, ' ',PRENOM) as NOMS, SEXE,etat_civil
+	[ETAT CIVIL], ADRESSE, TELEPHONE, niv_etude [NIVEAU D'ETUDE], Nationalite FROM agent]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer"/>
+	<field name="NOMS" class="java.lang.String"/>
+	<field name="SEXE" class="java.lang.String"/>
+	<field name="ETAT CIVIL" class="java.lang.String"/>
+	<field name="ADRESSE" class="java.lang.String"/>
+	<field name="TELEPHONE" class="java.lang.String"/>
+	<field name="NIVEAU D&apos;ETUDE" class="java.lang.String"/>
+	<field name="Nationalite" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="127" splitType="Stretch">
+			<frame>
+				<reportElement mode="Transparent" x="0" y="1" width="555" height="97" uuid="c87ecba8-f2be-409b-8f93-1c286fc9cbe5"/>
+				<box>
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<image>
+					<reportElement x="0" y="4" width="106" height="93" uuid="9a104c73-49ab-4b04-822d-c415e74a4cc5"/>
+					<imageExpression><![CDATA[".//kapkivu.jpg"]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="106" y="4" width="343" height="33" uuid="b7c33282-5175-449c-a98e-0cdfa21d17e9"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="28" isBold="true" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[KAP KIVU HOTEL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="106" y="37" width="343" height="20" uuid="506e8c70-09b2-4cbc-8721-20a68556fa29"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Trebuchet MS" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[République democratique du Congo]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="106" y="57" width="343" height="20" uuid="7e9688da-1e03-4206-86e7-875d614d74ee"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Trebuchet MS" size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Goma/avenue de la frontiere]]></text>
+				</staticText>
+			</frame>
+			<image>
+				<reportElement x="449" y="4" width="106" height="93" uuid="75413899-c626-403d-8634-b5a705a06135"/>
+				<imageExpression><![CDATA[".//kapkivu.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="106" y="78" width="343" height="20" uuid="742d0c18-9e70-47d1-8e7c-5157d892bfa1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Contact: 0978167647]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="106" y="103" width="343" height="24" uuid="e9f33e84-b25b-4c1a-934b-04a0f9f7c843"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Trebuchet MS" size="18" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[LISTE DES AGENTS]]></text>
+			</staticText>
+			<line>
+				<reportElement x="128" y="126" width="302" height="1" uuid="c1284151-1627-4e91-b71e-c05b3b2c7472"/>
+			</line>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="30" y="16" width="123" height="20" uuid="ed65bde9-e877-4e1b-8558-7c997bff3cc3"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[NOMS AGENT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="152" y="16" width="39" height="20" uuid="a03fc77e-c0b7-4c4d-a676-35d05909b075"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[SEXE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="16" width="63" height="20" uuid="9ff0c720-a9f3-46da-879d-780b1a335a62"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ETAT CIVIL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="16" width="69" height="20" uuid="2b776e65-e547-4723-a01d-b608993512ff"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[ADRESSE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="16" width="73" height="20" uuid="0cd48079-ffd5-4542-8c02-7190b415e22d"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[TELEPHONE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="396" y="16" width="96" height="20" uuid="8fee5c1e-d1ca-466d-a4d1-aaedcb461ac8"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[NIVEAU D'ETUDE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="492" y="16" width="63" height="20" uuid="d2814d84-f81a-41b4-8d9a-0f85fd252dc4"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nationalite]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="30" y="0" width="123" height="20" uuid="e3634997-f8b0-4fd0-a7c9-7b81979a8a70"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NOMS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="152" y="0" width="39" height="20" uuid="12b4f753-275c-4519-a341-1adcdf87461d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{SEXE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="191" y="0" width="63" height="20" uuid="9fb029d3-cc89-4f8f-bf0c-3705d50710fa"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ETAT CIVIL}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="0" width="69" height="20" uuid="382a3895-8874-45b9-8bb2-5fa00a29b4e0"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{ADRESSE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="0" width="73" height="20" uuid="d09e0bd6-8fdf-4a7c-aebc-bf0d4c0ec783"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{TELEPHONE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="392" y="0" width="100" height="20" uuid="7374d019-ec60-480c-b536-99420e45a84f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{NIVEAU D'ETUDE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="492" y="0" width="63" height="20" uuid="007f8980-cb70-49da-a067-d3e2d18be328"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{Nationalite}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="30" height="20" uuid="e4ba7fdc-c800-4b50-bc6f-1bcae2de113d"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{COLUMN_COUNT}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="1" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
